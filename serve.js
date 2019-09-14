@@ -51,8 +51,8 @@ app.use((error, req, res, next) => {
     })
 })
 
-const PORT = process.env.PORT || 6536
-app.listen(PORT, () => console.log(`server is Running on port ${PORT}`))
+const port = process.env.PORT || 6536
+app.listen(port, () => console.log(`server is Running on port ${port}`))
 
 /** 
  * backend server using Node Express MongoDB and giving of response in json for any js framework used for view
