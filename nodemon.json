@@ -1,6 +1,6 @@
 {
     "env": {
         "MONGODB_URI": "mongodb://localhost/vid-blog2",
-        "JWT_KEY": "secret",
+        "JWT_KEY": "secret"
     }
 }
