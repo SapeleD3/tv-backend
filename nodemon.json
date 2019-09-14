@@ -2,6 +2,5 @@
     "env": {
         "MONGODB_URI": "mongodb://localhost/vid-blog2",
         "JWT_KEY": "secret",
-        "PORT": "6530"
     }
 }
