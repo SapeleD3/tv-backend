@@ -7,7 +7,7 @@ const feedController = require('../controllers/feed')
 router.post('/', checkAuth, feedController.createFeed)
 router.get('/', feedController.viewFeeds);
 router.get('/:id', feedController.viewFeed);
-router.put('/:id', feedController.updateFeed)
+router.put('/:id', checkAuth, feedController.updateFeed)
 router.delete('/:id', feedController.deleteFeed)
 
 
