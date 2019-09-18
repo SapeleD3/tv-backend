@@ -12,6 +12,7 @@ exports.registerUser = (req, res) => {
         .then(user => {
             if (user.length >= 1) {
                 return res.status(422).json({
+                    status: 422,
                     message: 'Mail already Exist Login'
                 })
             } else {
@@ -28,8 +29,18 @@ exports.registerUser = (req, res) => {
                         });
                         user.save()
                             .then(result => {
-                                res.status(201).json({
-                                    message: 'User created'
+                                const token = jwt.sign(
+                                    {
+                                        email: result.email,
+                                        userId: result.Id
+                                    },
+                                    process.env.JWT_KEY,
+                                    {
+                                        expiresIn: "1h"
+                                    }
+                                )
+                                res.status(200).json({
+                                    token: token
                                 })
                             })
                             .catch(err => {
