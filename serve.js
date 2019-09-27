@@ -8,7 +8,7 @@ const userRoute = require('./api/routes/user')
 const feedRoute = require('./api/routes/feed')
 
 //connecting to db
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
+mongoose.connect(process.env.MONGODB_URI, { useCreateIndex: true, useNewUrlParser: true})
 .then(() => console.log('connected to MongoDD'))
 .catch(err => console.log('could not connect to database'))
 
