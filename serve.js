@@ -8,9 +8,9 @@ const userRoute = require('./api/routes/user')
 const feedRoute = require('./api/routes/feed')
 
 //connecting to db
-mongoose.connect(process.env.MONGODB_URI, { useCreateIndex: true, useNewUrlParser: true})
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/vid-blog2", { useCreateIndex: true, useNewUrlParser: true})
 .then(() => console.log('connected to MongoDD'))
-.catch(err => console.log('could not connect to database'))
+.catch(err => console.log('could not connect to database', err))
 
 //Middlewares
 app.use(bodyParser.urlencoded({extended:false}));
