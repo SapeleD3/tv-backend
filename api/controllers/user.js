@@ -77,7 +77,7 @@ exports.getUsers = (req, res) => {
     .then(users => {
         res.status(200).json({
             message: 'users fetch successful',
-            UserEmail: users[0].email
+            users: users
         })
     })
     .catch(err => {
